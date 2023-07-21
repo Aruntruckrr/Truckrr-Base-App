@@ -11,6 +11,7 @@
     <Folder Include="Areas\View\Driver\" />
     <Folder Include="Controller\" />
     <Folder Include="Model\" />
+    <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
   <ItemGroup>

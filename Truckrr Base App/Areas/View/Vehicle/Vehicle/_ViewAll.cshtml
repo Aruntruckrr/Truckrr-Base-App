@@ -1,6 +1,70 @@
 ﻿@using Truckrr_Base_App.Web.Areas.Models
+<<<<<<< HEAD
 @model IEnumerable<VehicleModel>
 
+=======
+<body>
+    <div>
+        <input type="text" id="myInput" asp-Area="Controller" asp-Controller="VehicleController" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary btn-lg" asp-Area="Controller" asp-controller="VehicleController">Add Vehicle</button>
+    </div>
+
+    
+
+</body>
+<input type="text" id="myInput" asp-Area="Controller" asp-Controller="VehicleController" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<ul id="myUL">
+    <li><a href="#">Adele</a></li>
+    <li><a href="#">Agnes</a></li>
+
+    <li><a href="#">Billy</a></li>
+    <li><a href="#">Bob</a></li>
+
+    <li><a href="#">Calvin</a></li>
+    <li><a href="#">Christina</a></li>
+    <li><a href="#">Cindy</a></li>
+</ul>
+
+
+<table id="VehicleTable" class="table table-striped" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>GSTID</th>
+            <th>Description</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var VehicleTable in Model)
+        {
+            <tr>
+                <td>
+                    @VehicleTable.Id
+                </td>
+                <td>
+                    @VehicleTable.Name
+                </td>
+                <td>
+                    @VehicleTable.GSTID
+                </td>
+                <td>
+                    @VehicleTable.Description
+                </td>
+                <td class="text-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Action
+                            </button>
+                            <div class="dropdown-menu shadow animated--grow-in">
+                                @*@if
+                                {
+                                    <a onclick="jQueryModalGet('/catalog/vendors/OnGetCreateOrEdit?id=@VehicleTable.Id','Edit Vendors')" class="dropdown-item"><i class="fas fa-pencil-alt"></i>  Edit</a>
+>>>>>>> 55b608b125b0dee0eda415033235fe307145d50e
 
 
     <body>
@@ -12,4 +76,31 @@
         </div>
 <table id="VehicleTable" class="table table-striped" width="100%" cellspacing="0">  
 </table>
+<<<<<<< HEAD
     </body>
+=======
+<script>
+    $(document).ready(function () {
+        $("#vendorsTable").DataTable();
+    });
+
+
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+
+</script>
+>>>>>>> 55b608b125b0dee0eda415033235fe307145d50e
